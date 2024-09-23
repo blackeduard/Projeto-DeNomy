@@ -1,27 +1,10 @@
-*{
-    padding: 0;
-    margin: 0;
+#share{
+    width: 50%;
+    visibility: hidden;
 }
-#apresentacao{
-    display: flex;
-    justify-content: space-evenly;
-    padding: 50px;
-    height: 100%;
+#share img{
+    height: 50px;
 }
-#apresentacao #my-pic{
-    cursor: pointer;
-}
-#apresentacao #my-pic img{
-    height: 300px;
-    border-radius: 50%;
-}
-#apresentacao #my-text{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 500px;
-    text-align: justify;
-}
-#apresentacao #my-text p{
-    margin-bottom: 8px;
+#share.open{
+    visibility: visible;
 }
