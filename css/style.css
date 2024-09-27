@@ -1,10 +1,87 @@
-#share{
-    width: 50%;
-    visibility: hidden;
+.share-container{
+    position: fixed;
+    right: 4rem;
+    bottom: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 999;
 }
-#share img{
-    height: 50px;
+.share-container.open .back{
+    backface-visibility: visible;
 }
-#share.open{
-    visibility: visible;
+.share-container.open .back .tw, .share-container.open .back .gp, .share-container.open .back .vk{
+    transform: none;
+}
+.button, .soc-but{
+    width: 3rem;
+    height: 3rem;
+}
+.button{
+    background: #042037;
+    position: relative;
+    perspective: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: white;
+}
+.button:hover .tw{
+    transform: rotateY(-180deg);
+}
+.button:hover .gp{
+    transform: rotateX(180deg);
+}
+.button:hover .vk{
+    transform: rotateX(-180deg);
+}
+.soc-but{
+    position: absolute;
+    transition: transform 0.4s ease;
+    transform-style: preserve-3d;
+}
+.back{
+    width: 100%;
+    height: 100%;
+    backface-visibility: visible;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: white;
+    text-decoration: none;
+}
+.vk .back, .gp .back{
+    transform: rotateX(180deg);
+}
+.tw .back{
+    transform: rotateY(180deg);
+}
+.vk .back{
+    background: black;
+}
+.tw .back{
+    background: rgb(0, 119, 181);
+}
+.gp .back{
+    background: linear-gradient(60deg , rgb(81, 91, 212), rgb(129, 52, 175), rgb(221, 42, 123)65%, rgb(254, 218, 119), rgb(245, 133, 41));
+}
+.vk{
+    transform-origin: 0% 0%;
+}
+.gp, .tw{
+    transform-origin: 100% 100%;
+}
+.tw{
+    transition-delay: 0.1s;
+    transform: rotateY(-90deg);
+}
+.gp{
+    transition-delay: 0.2s;
+    transform: rotateX(90deg);
+}
+.vk{
+    transform: rotateX(-90deg);
 }
