@@ -4,4 +4,3 @@ function Share(){
 }
 
 const button = document.getElementById('seu-botao-id')
-button.addEventListener('click', toggleShare)
