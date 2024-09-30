@@ -94,21 +94,29 @@ nav ul a{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     text-align: justify;
     line-height: 2em;
     padding: 0 1em;
     width: 100%;
     height: 100%;
-    z-index: 1;
     background-color: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(2px);
+    z-index: 1;
 }
-#sobre img{
+#sobre-texto p:not(last-child){
+    margin-bottom: 16px;
+}
+#sobre #sobre-texto img{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+}
+#sobre > img{
     position: absolute;
     left: 0;
     width: 100%;
     border-radius: 0 10px;
-
 }
 /* * Área Recursos */
 #recursos{
