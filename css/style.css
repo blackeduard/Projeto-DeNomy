@@ -87,6 +87,7 @@ nav ul a{
 /* * Área Sobre Mim */
 #sobre{
     display: flex;
+    justify-content: flex-end;
     align-items: center;
 }
 #sobre-texto{
@@ -96,18 +97,17 @@ nav ul a{
     text-align: justify;
     line-height: 2em;
     padding: 0 1em;
-    width: 500px;
+    width: 100%;
     height: 100%;
     z-index: 1;
-    background-color: rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(2px);
 }
 #sobre img{
     position: absolute;
-    right: 0;
+    left: 0;
     width: 100%;
-    min-width: 950px;
     border-radius: 0 10px;
-    max-width: 1100px;
 
 }
 /* * Área Recursos */
