@@ -16,7 +16,6 @@ nav{
     height: 5vh;
     align-items: end;
     justify-content: space-around;
-    transition: all 1s;
 }
 nav ul li a::after{
     content: '';
@@ -73,6 +72,9 @@ nav.fixed{
 #apresentacao #apresentacao-texto h2{
     font-size: 1.5em;
 }
+#apresentacao #apresentacao-texto p{
+    line-height: 1.5em;
+}
 #apresentacao #photo{
     height: 450px;
 }
@@ -93,31 +95,35 @@ nav.fixed{
 }
 /* * Área Sobre Mim */
 #sobre{
+    background-image: url('../img/escola.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+#sobre-img{
     display: flex;
     justify-content: center;
-    align-items: center;
+    color: black;
+    background-color: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(2px);
+    height: 100%;
+    width: 100%;
 }
 #sobre-texto{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: justify;
-    line-height: 2em;
-    padding: 0 1em;
-    width: 100%;
+    text-align: center;
     height: 100%;
-    background-color: rgba(255, 255, 255, 0.5);
-    backdrop-filter: blur(2px);
-    z-index: 1;
+    width: 600px;
+    line-height: 1.5em;
+    font-size: ;
+    font-weight: bold;
+    padding: 0 1em;
 }
 #sobre-texto p:not(last-child){
     margin-bottom: 16px;
-}
-#sobre > img{
-    position: absolute;
-    height: 90%;
-    border-radius: 0 10px;
 }
 /* * Área Recursos */
 #recursos{

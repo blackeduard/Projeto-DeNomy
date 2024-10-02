@@ -1,3 +1,8 @@
+// ScrollReveal().reveal('.sobre-texto', { 
+//   delay: 500,
+//   duration: 1000,
+//   reset: true
+// })
 const scroll = document.getElementById('nav')
 
 window.addEventListener('scroll', () => {
