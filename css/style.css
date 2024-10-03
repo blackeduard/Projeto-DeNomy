@@ -9,17 +9,20 @@ html{
 }
 .container{
     height: 100vh;
+    scroll-margin-top: 5vh;
 }
 /* * Navegador */
 nav{
     display: flex;
+    background-color: black;
     height: 5vh;
-    align-items: end;
+    align-items: center;
     justify-content: space-around;
+    transition: 1s;
 }
 nav ul li a::after{
     content: '';
-    background-color: black;
+    background-color: white;
     height: 1px;
     width: 0%;
     display: block;
@@ -30,6 +33,7 @@ nav ul li a:hover::after{
 }
 nav img{
     height: 4vh;
+    filter: invert();
 }
 nav ul{
     display: flex;
@@ -38,11 +42,12 @@ nav ul{
     list-style: none;
 }
 nav ul a{
-    color: black;
+    color: white;
     text-decoration: none;
 }
 nav.fixed{
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
     width: 100%;
     align-items: center;
     top: 0;
