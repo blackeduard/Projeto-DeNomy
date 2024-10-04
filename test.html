@@ -43,6 +43,23 @@
         #section3{
             background-color: green;
         }
+        .marquee {
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        .marquee p {
+            display: inline-block;
+            padding-left: 150%;
+            animation: marquee 4s linear infinite;
+        }
+        @keyframes marquee {
+            0% {
+                transform: translate(0, 0);
+            }
+            100% {
+                transform: translate(-100%, 0);
+            }
+        }
     </style>
 </head>
 <body>
@@ -53,13 +70,13 @@
       </nav>
       
       <div id="scrollspy-example">
-        <section class="container" id="section1">Section 1 content</section>
-        <section class="container" id="section2">Section 2 content</section>
-        <section class="container" id="section3">Section 3 content</section>
+        <div class="container marquee" id="section1"><p>Section 1 content</p></div>
+        <div class="container marquee" id="section2"><p>Section 2 content</p></div>
+        <div class="container marquee" id="section3"><p>Section 3 content</p></div>
       </div>
       <script>
         const navbar = document.getElementById('navbar');
-        const sections = document.querySelectorAll('section');
+        const sections = document.querySelectorAll('div');
         const navLinks = navbar.querySelectorAll('a');
 
         window.addEventListener('scroll', () => {
