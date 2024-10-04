@@ -13,21 +13,22 @@ window.addEventListener('scroll', () => {
   }
 })
 
-const navbar = document.getElementById('nav');
-const sections = document.querySelectorAll('ul');
-const navLinks = navbar.querySelectorAll('a');
+const sections = document.querySelectorAll('#nav ul li');
+const navbar = document.getElementById('nav')
+const navLinks = navbar.querySelectorAll('a')
+
 
 window.addEventListener('scroll', () => {
-const scrollPosition = window.scrollY + 500; // adjust the offset as needed
-sections.forEach((section) => {
-    if (scrollPosition >= section.offsetTop && scrollPosition < section.offsetTop + section.offsetHeight) {
-    const id = section.getAttribute('id')
-    navLinks.forEach((link) => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${id}`) {
-        link.classList.add('active')
-        }
-    })
-    }
-})
+  const scrollPosition = window.scrollY + 500
+  sections.forEach((section) => {
+      if (scrollPosition >= section.offsetTop && scrollPosition < section.offsetTop + section.offsetHeight) {
+      const id = section.getAttribute('id')
+      navLinks.forEach((link) => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === `#${id}`) {
+          link.classList.add('active')
+          }
+      })
+      }
+  })
 })

@@ -9,11 +9,13 @@ html{
 }
 .container{
     height: 100vh;
-    scroll-margin-top: 5vh;
+    scroll-margin-bottom: 5vh;
 }
 /* * Navegador */
 nav{
     display: flex;
+    position: fixed;
+    width: 100%;
     background-color: black;
     height: 5vh;
     align-items: center;
@@ -29,6 +31,9 @@ nav ul li a::after{
     transition: width 1s;
 }
 nav ul li a:hover::after{
+    width: 100%;
+}
+nav ul li a.active::after{
     width: 100%;
 }
 nav img{
@@ -57,7 +62,7 @@ nav.fixed{
 /* * Área Conteúdo */
 #apresentacao{
     display: flex;
-    height: 95vh;
+    padding-top: 5vh;
     align-items: center;
     justify-content: space-around;
 }
