@@ -43,11 +43,11 @@
         #section3{
             background-color: green;
         }
-        .marquee {
+        .texto-animado {
             overflow: hidden;
             white-space: nowrap;
         }
-        .marquee p {
+        .texto-animado p {
             display: inline-block;
             padding-left: 150%;
             animation: marquee 4s linear infinite;
@@ -70,9 +70,9 @@
       </nav>
       
       <div id="scrollspy-example">
-        <div class="container marquee" id="section1"><p>Section 1 content</p></div>
-        <div class="container marquee" id="section2"><p>Section 2 content</p></div>
-        <div class="container marquee" id="section3"><p>Section 3 content</p></div>
+        <div class="container texto-animado" id="section1"><p>Section 1 content</p></div>
+        <div class="container texto-animado" id="section2"><p>Section 2 content</p></div>
+        <div class="container texto-animado" id="section3"><p>Section 3 content</p></div>
       </div>
       <script>
         const navbar = document.getElementById('navbar');
@@ -80,7 +80,7 @@
         const navLinks = navbar.querySelectorAll('a');
 
         window.addEventListener('scroll', () => {
-        const scrollPosition = window.scrollY + 500; // adjust the offset as needed
+        const scrollPosition = window.scrollY + 700; // adjust the offset as needed
         sections.forEach((section) => {
             if (scrollPosition >= section.offsetTop && scrollPosition < section.offsetTop + section.offsetHeight) {
             const id = section.getAttribute('id');
