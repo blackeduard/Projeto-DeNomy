@@ -2,10 +2,12 @@
     padding: 0;
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    box-sizing: border-box;
 }
 html{
     scroll-behavior: smooth;
+}
+body{
+    transition: 1s;
 }
 .container{
     height: 100vh;
@@ -21,6 +23,28 @@ nav{
     align-items: center;
     justify-content: space-around;
     transition: 1s;
+}
+nav #abrir-menu{
+    display: flex;
+    align-items: center;
+    background-color: rgb(0, 0, 0, 0);
+    cursor: pointer;
+}
+/* nav #abrir-menu img{
+    height: 20px;
+}
+nav ul.show{
+    display: flex;
+} */
+nav ul{
+    display: flex; /* none */
+    width: 60%;
+    justify-content: space-between;
+    list-style: none;
+}
+nav ul a{
+    color: white;
+    text-decoration: none;
 }
 nav ul li a::after{
     content: '';
@@ -40,15 +64,36 @@ nav img{
     height: 4vh;
     filter: invert();
 }
-nav ul{
+nav input[type="checkbox"]{
+    appearance: none;
+    border: 1px solid white;
+    cursor: pointer;
     display: flex;
-    width: 60%;
-    justify-content: space-between;
-    list-style: none;
+    align-items: center;
+    width: 3em;
+    height: 1.5em;
+    background-color: black;
+    border-radius: 100px;
+    transition: .2s;
 }
-nav ul a{
-    color: white;
-    text-decoration: none;
+nav input[type="checkbox"]::after{
+    position: relative;
+    left: 2px;
+    content: "";
+    text-align: center;
+    width: 1.2em;
+    height: 1.2em;
+    border-radius: 50%;
+    background-color: white;
+    transition: .2s;
+}
+nav input[type="checkbox"]:checked{
+    border: 1px solid black;
+    background-color: white;
+}
+nav input[type="checkbox"]:checked:after{
+    background-color: black;
+    transform: translate(114%);
 }
 nav.fixed{
     background-color: rgba(0, 0, 0, 0.7);
@@ -58,6 +103,20 @@ nav.fixed{
     top: 0;
     position: fixed;
     z-index: 9;
+}
+nav.fixed input[type="checkbox"]{
+    border: 1px solid white;
+    background-color: black;
+}
+nav.fixed input[type="checkbox"]::after{
+    background-color: white;
+}
+nav.fixed input[type="checkbox"]:checked{
+    border: 1px solid black;
+    background-color: white;
+}
+nav.fixed input[type="checkbox"]:checked::after{
+    background-color: black;
 }
 /* * Área Conteúdo */
 #apresentacao{
@@ -139,7 +198,6 @@ nav.fixed{
     background-color: black;
     color: white;
     height: 100%;
-    width: 100%;
     padding: 0 50px;
 }
 #sobre-texto #texto h2{
@@ -158,10 +216,39 @@ nav.fixed{
 #sobre-texto #texto p:not(last-child), #sobre-texto #texto h1{
     margin-bottom: 16px;
 }
-/* * Área Recursos */
-#recursos{
-    background-color: red;
+/* * Área Habilidades */
+#habilidades{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
 }
+#habilidades > h1{
+    margin: 6vh 0 3vh 0;
+}
+#habilidades #recursos{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+#recursos .card{
+    display: flex;
+    margin: 20px;
+    width: 12rem;
+    aspect-ratio: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: blue;
+}
+#recursos img{
+    height: 70px;
+    width: 4rem;
+}
+
+
+
+
 /* * Área Escola */
 #escola{
     background-color: green;
