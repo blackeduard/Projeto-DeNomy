@@ -206,6 +206,7 @@ nav.fixed input[type="checkbox"]:checked::after{
     background-color: black;
     color: white;
     height: 100%;
+    font-size: x-small;
     padding: 0 50px;
 }
 #sobre-texto #texto h2{
@@ -246,7 +247,8 @@ nav.fixed input[type="checkbox"]:checked::after{
     display: flex;
     margin: 10px;
     border-radius: 3em 3em 0 0;
-    width: 10.5rem;
+    width: 15%;
+    padding: 5px;
     aspect-ratio: 1;
     flex-direction: column-reverse;
     justify-content: space-evenly;
@@ -401,17 +403,72 @@ nav.fixed input[type="checkbox"]:checked::after{
 .dark #contato .contact_box > p{
     color: rgba(255, 255, 255, 0.7);
 }
+
+/* Responsividade */
+@media screen and (max-width: 880px){
+    #apresentacao{
+        flex-direction: column-reverse;
+        justify-content: start;
+        gap: 15%;
+        padding-top: 6vh;
+    }
+    #apresentacao #photo{
+        width: 40%;
+        min-width: 280px;
+    }
+    #escola{
+        flex-direction: column;
+        align-items: start;
+        padding-top: 10vh;
+        gap: 10vh;
+    }
+    #escola .escola:hover{
+        width: 70%;
+    }
+    #escola .escola{
+        position: relative;
+        height: 35%;
+        width: 50%;
+    }
+    #escola .escola#segundo, #escola .escola#terceiro{
+        border-radius: 0;
+    }
 /* 
-#sobre-texto img{
-    margin: 0 3em;
+#escola{
+    display: flex;
+    align-items: center;
+}
+#escola .escola{
+    display: flex;
+    position: absolute;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    height: 95%;
+    width: 40%;
+    font-size: 5em;
+    text-decoration: none;
+    background-size: auto;
+    border-radius: 0 .5em .5em 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: 1s;
+}
+#escola .escola:last-child{
+    border-radius: .5em 0 0 .5em;
+}
+#escola .escola:hover{
+    width: 45%;
+}
+#escola .escola#segundo{
+    background-image: url('../img/wallpaper02.jpg');
+    left: 0;
+}
+#escola .escola#terceiro{
+    background-image: url('../img/wallpaper01.jpg');
+    right: 0;
 }
 */
-/* Responsividade */
-@media screen and (min-width: 1024px){
-
-}
-@media screen and (min-width: 768px) and (max-width: 1023px){
-
 }
 @media screen and (min-width: 767px){
 
