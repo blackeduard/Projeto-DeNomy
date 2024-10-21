@@ -1,98 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        *{
-            padding: 0;
-            margin: 0;
-        }
-        nav{
-            position: fixed;
-            display: flex;
-            justify-content: space-around;
-            background-color: black;
-            height: 5vh;
-            width: 100%;
-            align-items: center;
-        }
-        nav a{
-            text-decoration: none;
-        }
-        .active {
-            color: #337ab7;
-            background-color: #f7f7f7;
-            border-bottom: 2px solid #337ab7;
-        }
-        .container{
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3em;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-        #section1{
-            background-color: blue;
-        }
-        #section2{
-            background-color: red;
-        }
-        #section3{
-            background-color: green;
-        }
-        .texto-animado {
-            overflow: hidden;
-            white-space: nowrap;
-        }
-        .texto-animado p {
-            display: inline-block;
-            padding-left: 150%;
-            animation: marquee 4s linear infinite;
-        }
-        @keyframes marquee {
-            0% {
-                transform: translate(0, 0);
-            }
-            100% {
-                transform: translate(-100%, 0);
-            }
-        }
-    </style>
 </head>
 <body>
-    <nav id="navbar">
-        <a href="#section1">Section 1</a>
-        <a href="#section2">Section 2</a>
-        <a href="#section3">Section 3</a>
-      </nav>
-      
-      <div id="scrollspy-example">
-        <div class="container texto-animado" id="section1"><p>Section 1 content</p></div>
-        <div class="container texto-animado" id="section2"><p>Section 2 content</p></div>
-        <div class="container texto-animado" id="section3"><p>Section 3 content</p></div>
-      </div>
-      <script>
-        const navbar = document.getElementById('navbar');
-        const sections = document.querySelectorAll('div');
-        const navLinks = navbar.querySelectorAll('a');
-
-        window.addEventListener('scroll', () => {
-        const scrollPosition = window.scrollY + 700; // adjust the offset as needed
-        sections.forEach((section) => {
-            if (scrollPosition >= section.offsetTop && scrollPosition < section.offsetTop + section.offsetHeight) {
-            const id = section.getAttribute('id');
-            navLinks.forEach((link) => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${id}`) {
-                link.classList.add('active');
-                }
-            });
-            }
-        });
-        });
-      </script>
+    <div class="container" id="habilidades">
+        <h1>Habilidades em construção</h1>
+        <div id="recursos">
+            <div class="card"><p>HTML</p><img src="img/HTML.png" alt=""></div>
+            <div class="card"><p>CSS</p><img src="img/CSS.png" alt=""></div>
+            <div class="card"><p>JavaScript</p><img src="img/JavaScript.png" alt=""></div>
+            <div class="card"><p>MySQL</p><img src="img/MySQL.png" alt=""></div>
+            <div class="card"><p>Linguagem C</p><img src="img/LinguagemC.png" alt=""></div>
+            <div class="card"><p>Portugol</p><img src="img/Portugol.png" alt=""></div>
+            <div class="card"><p>Python</p><img src="img/python.png" alt=""></div>
+            <div class="card"><p>Bootstrap</p><img src="img/Bootstrap.png" alt=""></div>
+        </div>
+    </div>
 </body>
 </html>

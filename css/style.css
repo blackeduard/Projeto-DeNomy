@@ -8,6 +8,14 @@ html{
 }
 body{
     transition: 1s;
+    overflow-x: hidden;
+    background-image: url('../img/background.png');
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+body.no-scroll {
+    overflow: hidden; /* Desativa a rolagem do corpo */
 }
 .container{
     height: 100vh;
@@ -39,7 +47,7 @@ nav ul.show{
 nav ul{
     display: flex; /* none */
     width: 60%;
-    justify-content: space-between;
+    justify-content: space-evenly;
     list-style: none;
 }
 nav ul a{
@@ -148,20 +156,19 @@ nav.fixed input[type="checkbox"]:checked::after{
 #apresentacao #photo{
     height: 450px;
 }
-#apresentacao #apresentacao-texto #redes ul{
-    display: flex;
-    gap: 5%;
-    list-style: none;
+#apresentacao #apresentacao-texto > a > button{
+    font-size: 1em;
+    padding: 1em 2em;
+    border-radius: 2rem;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.2);
+    font-weight: bolder;
+    border: 2px solid black;
+    transition: all .2s;
 }
-#apresentacao #apresentacao-texto #redes ul a{
-    padding: 5px 10px;
-    border-radius: 10px;
-    font-size: 1.5em;
-    color: white;
-    background-color: black;
-}
-#apresentacao #apresentacao-texto #redes ul a img{
-    filter: invert();
+#apresentacao #apresentacao-texto > a > button:hover{
+    background-color: rgb(0, 0, 0, 0.35);
+    transform: scale(.95);
 }
 /* * Área Sobre Mim */
 #sobre{
@@ -194,6 +201,7 @@ nav.fixed input[type="checkbox"]:checked::after{
 #sobre-texto #texto{
     display: flex;
     flex-direction: column;
+    justify-content: center;
     text-align: justify;
     background-color: black;
     color: white;
@@ -221,9 +229,10 @@ nav.fixed input[type="checkbox"]:checked::after{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-evenly;
 }
 #habilidades > h1{
-    margin: 6vh 0 3vh 0;
+    font-size: 2.5em;
 }
 #habilidades #recursos{
     display: flex;
@@ -236,18 +245,32 @@ nav.fixed input[type="checkbox"]:checked::after{
 #recursos .card{
     display: flex;
     margin: 10px;
-    border-radius: 50px 0 0 0;
-    width: 12rem;
+    border-radius: 3em 3em 0 0;
+    width: 10.5rem;
     aspect-ratio: 1;
     flex-direction: column-reverse;
     justify-content: space-evenly;
     align-items: center;
     background-color: black;
     transition: .2s;
+    position: relative;
+}
+#recursos .card::after{
+    position: absolute;
+    bottom: 2%;
+    content: '';
+    width: 95%;
+    height: 3%;
+    background-color: blue;
 }
 #recursos .card:hover{
     transform: scale(1.05);
     cursor: pointer;
+}
+#recursos .card:hover::after{
+    width: 100%;
+    height: 4%;
+    bottom: 0;
 }
 #recursos .card p{
     font-size: 1.5em;
@@ -258,12 +281,10 @@ nav.fixed input[type="checkbox"]:checked::after{
     height: 4rem;
     filter: invert();
 }
-
-
 /* * Área Escola */
 #escola{
     display: flex;
-    justify-content: space-between;
+    align-items: center;
 }
 #escola .escola{
     display: flex;
@@ -271,134 +292,127 @@ nav.fixed input[type="checkbox"]:checked::after{
     color: white;
     align-items: center;
     justify-content: center;
-    height: 100%;
-    width: 47.5%;
+    height: 95%;
+    width: 40%;
     font-size: 5em;
     text-decoration: none;
     background-size: auto;
+    border-radius: 0 .5em .5em 0;
     background-repeat: no-repeat;
     background-position: center;
     transition: 1s;
+}
+#escola .escola:last-child{
+    border-radius: .5em 0 0 .5em;
+}
+#escola .escola:hover{
+    width: 45%;
 }
 #escola .escola#segundo{
     background-image: url('../img/wallpaper02.jpg');
     left: 0;
 }
-#escola .escola#segundo:hover{
-    width: 50%;
-}
 #escola .escola#terceiro{
     background-image: url('../img/wallpaper01.jpg');
     right: 0;
 }
-#escola .escola#terceiro:hover{
-    width: 50%;
-}
-/* * Área Projetos */
-#projetos{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-#projetos h1{
-    margin: 10vh 0 5vh 0;
-}
-#projetos .projeto img{
-    height: 15rem;
-}
 /* * Área Contato */
 #contato{
-    background-color: orange;
-    height: 100px;
-}
-/* ! Área compartilhamento */
-/* .share-container{
-    position: fixed;
-    right: 4rem;
-    bottom: 4rem;
+    height: 40vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    cursor: pointer;
-    z-index: 999;
+    gap: 5%;
 }
-.share-container .button, .soc-but{
-    width: 3rem;
-    height: 3rem;
-}
-.share-container .button{
-    background: #042037;
-    position: relative;
-    perspective: 300px;
+#contato > h1{
     display: flex;
     align-items: center;
-    justify-content: center;
-    font-size: 2rem;
-    color: white;
+    height: 25%;
 }
-.share-container .button:hover .tw{
-    transform: rotateY(-180deg);
-}
-.share-container .button:hover .gp{
-    transform: rotateX(180deg);
-}
-.share-container .button:hover .vk{
-    transform: rotateX(-180deg);
-}
-.share-container .soc-but{
-    position: absolute;
-    transition: transform 0.4s ease;
-    transform-style: preserve-3d;
-}
-.share-container .back{
+#contato .contact{
+    display: flex;
     width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    display: flex;
-    align-items: center;
+    height: 65%;
     justify-content: center;
-    font-size: 2rem;
-    color: white;
+    gap: 10%;
+}
+#contato .contact_box{
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-decoration: none;
+    gap: 10%;
+    color: black;
+    transition: all .3s;
 }
-.share-container .vk .back, .share-container .gp .back{
-    transform: rotateX(180deg);
+#contato .contact_box:hover{
+    transform: scale(1.1);
 }
-.share-container .tw .back{
-    transform: rotateY(180deg);
+#contato .contact_box i{
+    font-size: 3em;
+    display: block;
+    box-shadow: 0 0 1em rgba(0, 0, 0, 0.5);
+    color: white;
+    background-color: rgb(10, 10, 10);
+    padding: .5rem;
+    border-radius: 1.5rem;
 }
-.share-container .vk .back{
-    background: black;
+#contato .contact_box > p{
+    color: rgba(0, 0, 0, 0.7);
 }
-.share-container .tw .back{
-    background: rgb(0, 119, 181);
+#contato > p{
+    height: 10%;
+    font-weight: bold;
 }
-.share-container .gp .back{
-    background: linear-gradient(60deg , rgb(81, 91, 212), rgb(129, 52, 175)40%, rgb(221, 42, 123)65%, rgb(254, 218, 119), rgb(245, 133, 41));
+/* Modo escuro site */
+.dark{
+    color: white;
+    background-image: url('../img/background-removebg2.png');
 }
-.share-container .vk{
-    transform-origin: 0% 0%;
+.dark nav{
+    background-color: white;
 }
-.share-container .gp, .share-container .tw{
-    transform-origin: 100% 100%;
+.dark nav ul a{
+    color: black;
 }
-.share-container .tw{
-    transition-delay: 0.1s;
-    transform: rotateY(-90deg);
+.dark nav ul li a::after{
+    background-color: black;
 }
-.share-container .gp{
-    transition-delay: 0.2s;
-    transform: rotateX(90deg);
+.dark nav img{
+    filter: none;
 }
-.share-container .vk{
-    transform: rotateX(-90deg);
+.dark nav.fixed{
+    background-color: rgba(255, 255, 255, 0.3)
 }
-.share-container.open .tw{
-    transform: rotateY(-180deg);
+.dark #apresentacao #photo{
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.1));
 }
-.share-container.open .gp{
-    transform: rotateX(180deg);
+.dark #apresentacao #apresentacao-texto > a > button{
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: white;
+    color: white;
 }
-.share-container.open .vk{
-    transform: rotateX(-180deg);
-} */
+.dark #apresentacao #apresentacao-texto > a > button:hover{
+    background-color: rgba(255, 255, 255, 0.4);
+}
+.dark #contato .contact_box > p{
+    color: rgba(255, 255, 255, 0.7);
+}
+/* 
+#sobre-texto img{
+    margin: 0 3em;
+}
+*/
+/* Responsividade */
+@media screen and (min-width: 1024px){
+
+}
+@media screen and (min-width: 768px) and (max-width: 1023px){
+
+}
+@media screen and (min-width: 767px){
+
+}
