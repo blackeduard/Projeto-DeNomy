@@ -431,7 +431,7 @@ nav.fixed input[type="checkbox"]:checked::after{
         width: 50%;
     }
     #escola .escola#segundo, #escola .escola#terceiro{
-        border-radius: 0;
+        border-radius: 0 20% 20% 0;
     }
 /* 
 #escola{
