@@ -135,7 +135,7 @@ nav.fixed input[type="checkbox"]:checked::after{
 }
 #apresentacao #apresentacao-texto{
     text-align: justify;
-    width: 500px;
+    width: 50%;
     min-width: 500px;
 }
 #apresentacao #apresentacao-texto h1{
@@ -321,12 +321,12 @@ nav.fixed input[type="checkbox"]:checked::after{
 }
 /* * Área Contato */
 #contato{
-    height: 25vh;
+    background-color: red;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 5%;
+    gap: 2em;
 }
 #contato > h1{
     display: flex;
@@ -336,16 +336,15 @@ nav.fixed input[type="checkbox"]:checked::after{
     display: flex;
     width: 100%;
     justify-content: center;
-    gap: 10%;
+    gap: 1em;
 }
 #contato .contact_box{
     display: flex;
-    height: 100%;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-decoration: none;
-    gap: 10%;
+    gap: 2em;
     color: black;
     transition: all .3s;
 }
@@ -439,8 +438,14 @@ nav.fixed input[type="checkbox"]:checked::after{
         height: 250px;
         margin: 20px;
     }
+    #contato{
+        justify-content: space-around;
+    }
     #contato .contact{
         flex-wrap: wrap;
+    }
+    #contato .contact_box{
+        gap: .5em;
     }
     
 /* 
