@@ -197,6 +197,7 @@ nav.fixed input[type="checkbox"]:checked::after{
 }
 #sobre-texto img{
     margin: 0 3em;
+    height: 250px;
 }
 #sobre-texto #texto{
     display: flex;
@@ -206,7 +207,7 @@ nav.fixed input[type="checkbox"]:checked::after{
     background-color: black;
     color: white;
     height: 100%;
-    font-size: x-small;
+    font-size: 1.2vmax;
     padding: 0 50px;
 }
 #sobre-texto #texto h2{
@@ -320,7 +321,7 @@ nav.fixed input[type="checkbox"]:checked::after{
 }
 /* * Área Contato */
 #contato{
-    height: 40vh;
+    height: 25vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -330,12 +331,10 @@ nav.fixed input[type="checkbox"]:checked::after{
 #contato > h1{
     display: flex;
     align-items: center;
-    height: 25%;
 }
 #contato .contact{
     display: flex;
     width: 100%;
-    height: 65%;
     justify-content: center;
     gap: 10%;
 }
@@ -359,14 +358,13 @@ nav.fixed input[type="checkbox"]:checked::after{
     box-shadow: 0 0 1em rgba(0, 0, 0, 0.5);
     color: white;
     background-color: rgb(10, 10, 10);
-    padding: .5rem;
-    border-radius: 1.5rem;
+    padding: .2em;
+    border-radius: .5em;
 }
 #contato .contact_box > p{
     color: rgba(0, 0, 0, 0.7);
 }
 #contato > p{
-    height: 10%;
     font-weight: bold;
 }
 /* Modo escuro site */
@@ -433,6 +431,18 @@ nav.fixed input[type="checkbox"]:checked::after{
     #escola .escola#segundo, #escola .escola#terceiro{
         border-radius: 0 20% 20% 0;
     }
+    #sobre-texto{
+        flex-direction: column;
+        height: 70%;
+    }
+    #sobre-texto img{
+        height: 250px;
+        margin: 20px;
+    }
+    #contato .contact{
+        flex-wrap: wrap;
+    }
+    
 /* 
 #escola{
     display: flex;
