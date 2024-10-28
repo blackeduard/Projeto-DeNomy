@@ -231,58 +231,52 @@ nav.fixed input[type="checkbox"]:checked::after{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
+    gap: 3%;
 }
-#habilidades > h1{
-    font-size: 2.5em;
+#habilidades #recursos .card > img{
+    height: 5em;
+    filter: invert();
 }
 #habilidades #recursos{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    min-width: 540px;
-    margin: 0 20px 0 20px;
-    gap: 10%;
+    max-width: 740px;
+    gap: 50px;
+    margin: 0 50px;
 }
-#recursos .card{
+#habilidades #recursos .card{
     display: flex;
-    margin: 10px;
-    border-radius: 3em 3em 0 0;
-    width: 15%;
-    padding: 5px;
-    aspect-ratio: 1;
-    flex-direction: column-reverse;
-    justify-content: space-evenly;
+    position: relative;
+    flex-direction: column;
     align-items: center;
     background-color: black;
-    transition: .2s;
-    position: relative;
+    border-radius: 20px 20px  0 0 ;
+    height: 7em;
+    width: 6em;
+    gap: 1em;
+    padding: 1em;
+    transition: all .4s;
 }
-#recursos .card::after{
-    position: absolute;
-    bottom: 2%;
+#habilidades #recursos .card:hover{
+    transform: scale(1.06);
+}
+#habilidades #recursos .card::after{
     content: '';
-    width: 95%;
-    height: 3%;
+    position: absolute;
     background-color: blue;
-}
-#recursos .card:hover{
-    transform: scale(1.05);
-    cursor: pointer;
-}
-#recursos .card:hover::after{
-    width: 100%;
+    bottom: 2px;
+    width: 97%;
     height: 4%;
+}
+#habilidades #recursos .card:hover::after{
     bottom: 0;
+    width: 100%;
+    height: 5%;
 }
-#recursos .card p{
-    font-size: 1.5em;
+#habilidades #recursos .card p{
     color: white;
-}
-#recursos .card img{
-    height: 70px;
-    height: 4rem;
-    filter: invert();
 }
 /* * Área Escola */
 #escola{
@@ -321,7 +315,7 @@ nav.fixed input[type="checkbox"]:checked::after{
 }
 /* * Área Contato */
 #contato{
-    background-color: red;
+    padding: 1em 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -387,7 +381,7 @@ nav.fixed input[type="checkbox"]:checked::after{
     background-color: rgba(255, 255, 255, 0.3)
 }
 .dark #apresentacao #photo{
-    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.1));
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
 }
 .dark #apresentacao #apresentacao-texto > a > button{
     background-color: rgba(255, 255, 255, 0.1);
