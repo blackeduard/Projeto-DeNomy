@@ -135,7 +135,7 @@ nav.fixed input[type="checkbox"]:checked::after{
 }
 #apresentacao #apresentacao-texto{
     text-align: justify;
-    width: 50%;
+    width: 100%;
     min-width: 500px;
 }
 #apresentacao #apresentacao-texto h1{
@@ -396,12 +396,18 @@ nav.fixed input[type="checkbox"]:checked::after{
 }
 
 /* Responsividade */
-@media screen and (max-width: 880px){
+@media screen and (max-width: 880px) and (min-width: 768px){
     #apresentacao{
         flex-direction: column-reverse;
         justify-content: start;
         gap: 15%;
         padding-top: 6vh;
+    }
+    #apresentacao #apresentacao-texto{
+        text-align: center;
+    }
+    #apresentacao #apresentacao-texto p{
+        text-align: justify;
     }
     #apresentacao #photo{
         width: 40%;
@@ -479,6 +485,78 @@ nav.fixed input[type="checkbox"]:checked::after{
 }
 */
 }
-@media screen and (min-width: 767px){
-
+@media screen and (max-width: 767px){
+    nav ul li a::after{
+        display: none;
+    }
+    #apresentacao #apresentacao-texto > a > button:hover{
+        transform: none;
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+    .dark #apresentacao #apresentacao-texto > a > button:hover{
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+    #apresentacao{
+        flex-direction: column-reverse;
+        justify-content: start;
+        gap: 15%;
+        padding-top: 6vh;
+    }
+    #apresentacao #apresentacao-texto{
+        text-align: center;
+    }
+    #apresentacao #apresentacao-texto p{
+        text-align: justify;
+    }
+    #escola{
+        flex-direction: column;
+        align-items: center;
+        padding-top: 10vh;
+        gap: 10vh;
+    }
+    #escola .escola{
+        position: relative;
+        height: 35%;
+        width: 50%;
+    }
+    #habilidades #recursos .card:hover{
+        transform: none;
+    }
+    #habilidades #recursos .card::after{
+        background-color: blue;
+        bottom: 0;
+        width: 100%;
+        height: 5%;
+    }
+    #sobre-texto{
+        flex-direction: column;
+        height: 70%;
+    }
+    #escola .escola{
+        width: 65%;
+        text-align: center;
+        border-radius: 0 50px  !important;
+    }
+    #escola .escola#terceiro{
+        border-radius: 50px 0 !important;
+    }
+    #escola .escola:hover{
+        width: 65%;
+    }
+    #sobre-texto img{
+        height: 250px;
+        margin: 20px;
+    }
+    #contato{
+        justify-content: space-around;
+    }
+    #contato .contact{
+        flex-wrap: wrap;
+    }
+    #contato .contact_box{
+        gap: .5em;
+    }
+    #contato .contact_box:hover{
+        transform: none;
+    }
 }
