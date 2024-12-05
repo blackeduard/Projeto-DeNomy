@@ -129,7 +129,7 @@ nav.fixed input[type="checkbox"]:checked::after{
 /* * Área Conteúdo */
 #apresentacao{
     display: flex;
-    padding-top: 5vh;
+    padding: 5vh 1em 0 1em;
     align-items: center;
     justify-content: space-around;
 }
@@ -496,6 +496,9 @@ nav.fixed input[type="checkbox"]:checked::after{
     .dark #apresentacao #apresentacao-texto > a > button:hover{
         background-color: rgba(255, 255, 255, 0.1);
     }
+    main{
+        padding: 0;
+    }
     #apresentacao{
         flex-direction: column-reverse;
         justify-content: start;
@@ -551,7 +554,10 @@ nav.fixed input[type="checkbox"]:checked::after{
         justify-content: space-around;
     }
     #contato .contact{
-        flex-wrap: wrap;
+        gap: 0 10%;
+    }
+    #contato .contact p{
+        display: none;
     }
     #contato .contact_box{
         gap: .5em;
